@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div *ngIf="!loading">
+        <strong class="mb-3">Score: <a [ngClass]='scoreClass()'>{{score}}</a></strong>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3" *ngFor="let q of questions">
+                <app-question (onAnswer)="onAnswer($event)" [question]="q"></app-question>
+            </div>
+        </div>
+      </div>
+</div>

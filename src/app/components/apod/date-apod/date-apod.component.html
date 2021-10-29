@@ -1,0 +1,9 @@
+<div class="mt-2 mb-2">
+    <div class="form-inline">
+      <input class="mr-2 form-control" type="text" ngbDatepicker #d="ngbDatepicker"
+             [maxDate]="{year: today.getFullYear(), month: today.getMonth() + 1, day: today.getDate()}"
+             (dateSelect)='onDateChanged($event.year, $event.month, $event.day)'/>
+      <button class="btn btn-primary" (click)="d.toggle()">Choose a date</button>
+    </div>
+  </div>
+  

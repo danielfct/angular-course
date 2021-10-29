@@ -1,0 +1,16 @@
+
+<form name="Calculator" class="calculator">
+    <table border="2" align="center" cellpadding="15" cellspacing="12" bgcolor="#c0c0c0">
+        <tr>
+            <td>
+                <app-display [displayValue]="display"></app-display>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <app-keyboard (onKeyClick)="handleClick($event)"></app-keyboard>
+            </td>
+
+        </tr>
+    </table>

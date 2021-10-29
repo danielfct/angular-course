@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <h1 class="display-3">{{apod.title}}</h1>
+    <p class="lead">{{apod.date}}</p>
+    <hr class="my-2">
+    <img *ngIf="apod.media_type === 'image'" [src]="apod.url" alt="" class="d-block mx-auto mb-3">
+    <youtube-player *ngIf="apod.media_type === 'video' && apod.url.includes('youtube')"
+                    [videoId]="getYoutubeVideoId()">
+    </youtube-player>
+    <a *ngIf="apod.media_type === 'video' && apod.url.includes('vimeo')"
+       class="mt-2 mb-2"
+       target="_blank"
+       [href]='apod.url'>
+      {{apod.url}}
+    </a>
+    <p>{{apod.explanation}}</p>
+    <p class="lead">
+      <a *ngIf="apod.media_type === 'image'"
+         class="btn btn-primary btn-lg"
+         [href]="apod.hdurl"
+         role="button"
+         target="_blank">Download</a>
+    </p>
+  </div>
+  

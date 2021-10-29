@@ -1,0 +1,17 @@
+<div class="card h-100">
+  <div class="card-body">
+    <div class="d-flex w-100 justify-content-between mb-2">
+      <small [innerHtml]="question.category"></small>
+      <small [ngClass]='difficultClass()'>{{question.difficulty}}</small>
+    </div>
+      <h4 class="card-title" [innerHtml]="question.question"></h4>
+      <button 
+      [disabled]='answered'
+      [ngClass]='buttonClass(answer)'
+      (click)='answerQuestion(answer)' 
+      [innerHtml]="answer" 
+      type="button" name="" id="" [class]="'btn btn-primary btn-block'" 
+      *ngFor="let answer of question.answers; let i=index">
+    </button>
+  </div>
+</div>
